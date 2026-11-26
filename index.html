@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pankaj &amp; Muskan — Save the Date</title>
+<meta name="description" content="Save the date: Pankaj & Muskan, 21–23 January 2027, Bhopal.">
+<meta name="theme-color" content="#f8f09b">
+<meta property="og:title" content="Pankaj & Muskan — Save the Date">
+<meta property="og:description" content="21–23 January 2027 · Bhopal">
+<meta property="og:image" content="art/savedate.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Patrick+Hand&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="film.css?v=1">
+</head>
+<body>
+<main class="stage" id="stage" aria-label="Save the date film">
+  <div class="scene" id="scene"></div>
+  <div class="bars" id="bars" aria-hidden="true"></div>
+  <button class="mute" id="mute" type="button" aria-label="Mute music" aria-pressed="false">♪</button>
+  <button class="tap tap--prev" id="prev" type="button" aria-label="Previous"></button>
+  <button class="tap tap--next" id="next" type="button" aria-label="Next"></button>
+  <div class="end" id="end" hidden>
+    <a class="pill pill--red" href="https://udaylal2k.github.io/pankaj-weds-muskan/" target="_blank" rel="noopener">Wedding details</a>
+    <a class="pill" id="share" href="#" target="_blank" rel="noopener">Share</a>
+    <button class="pill" id="replay" type="button">Replay</button>
+  </div>
+  <button class="gate" id="gate" type="button" aria-label="Play the save the date">
+    <span class="gate__in"><span class="gate__k">Pankaj &amp; Muskan</span><span class="gate__t">SAVE <i>द</i> DATE!</span><span class="gate__go">▶ Tap to play</span></span>
+  </button>
+</main>
+<audio id="song" src="audio/aaj-sajeya.mp3" preload="auto" loop></audio>
+<script src="film.js?v=1"></script>
+</body>
+</html>

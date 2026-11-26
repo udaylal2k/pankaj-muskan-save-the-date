@@ -1,0 +1,57 @@
+:root{--yellow:#f8f09b;--red:#b3262d;--ink:#3a2a24;--paper:#efeadb}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#2b2620;overflow:hidden;font-family:"Patrick Hand",system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+img{display:block;max-width:none;height:auto}
+.stage{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:100vw;height:100svh;overflow:hidden;background:var(--yellow);container-type:size}
+@media (min-aspect-ratio:3/5){.stage{height:calc(100svh - 32px);width:calc((100svh - 32px)*9/16);border-radius:16px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}}
+.scene{position:absolute;inset:0;overflow:hidden}
+.layer{position:absolute;inset:0;overflow:hidden}
+.abs{position:absolute;will-change:transform,opacity}
+.full{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* type */
+.std-names{position:absolute;left:0;right:0;top:8.5%;text-align:center;font-family:"Rozha One",serif;font-size:4.6cqw;letter-spacing:.12em;color:var(--red)}
+.std-word{position:absolute;left:50%;font-family:"Rozha One",serif;color:var(--red);line-height:1;white-space:nowrap}
+.std-save{top:14%;font-size:19cqw}
+.std-de{top:31%;font-size:8cqw}
+.std-date{top:38.5%;font-size:19cqw}
+.std-when{position:absolute;left:0;right:0;top:55.5%;text-align:center;font-family:"Rozha One",serif;font-size:5.6cqw;color:var(--red)}
+.std-when sup{font-size:.55em}
+.std-where{position:absolute;left:0;right:0;top:61.5%;text-align:center;font-family:"Rozha One",serif;font-size:5cqw;letter-spacing:.14em;color:var(--red)}
+.banner-text{position:absolute;font-family:"Patrick Hand",cursive;color:#5b5148;font-size:4.6cqw;white-space:nowrap}
+.count{position:absolute;font-family:"Rozha One",serif;color:#b0711f;line-height:1;text-align:center;opacity:.9}
+.confetti{position:absolute;width:1.6cqw;height:2.6cqw;border-radius:2px}
+.zip{position:absolute;border-radius:50%;border:2.2cqw dashed #c9a13a;box-shadow:0 0 0 .8cqw #8a6a2a inset}
+.road{position:absolute;left:50%;bottom:0;width:6cqw;height:30%;margin-left:-3cqw;background:repeating-linear-gradient(to bottom,#fff 0 6cqh,transparent 6cqh 11cqh);animation:road .45s linear infinite;transform-origin:50% 100%;transform:perspective(40cqw) rotateX(55deg)}
+@keyframes road{to{background-position:0 11cqh}}
+/* chrome */
+.bars{position:absolute;z-index:20;left:4cqw;right:4cqw;top:max(1.5cqw,env(safe-area-inset-top));display:flex;gap:.8cqw;opacity:0;transition:opacity .5s}
+.playing .bars{opacity:1}
+.bars span{flex:1;height:2px;border-radius:2px;background:rgba(58,42,36,.18);overflow:hidden}
+.bars i{display:block;height:100%;background:var(--red);transform:scaleX(0);transform-origin:0 50%}
+.mute{position:absolute;z-index:21;right:3cqw;top:5cqw;width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:#fffbe0;color:var(--ink);font-size:20px;cursor:pointer;opacity:0;transition:opacity .5s}
+.playing .mute{opacity:1}
+.mute[aria-pressed="true"]{text-decoration:line-through}
+.tap{position:absolute;z-index:19;top:10%;bottom:14%;border:0;background:none;padding:0;cursor:pointer}
+.tap--prev{left:0;width:30%}.tap--next{right:0;width:70%}
+.end{position:absolute;z-index:22;left:0;right:0;bottom:6cqw;display:flex;flex-wrap:wrap;justify-content:center;gap:2cqw;padding:0 5cqw}
+.end[hidden]{display:none}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:999px;border:2px solid var(--ink);background:#fffbe0;color:var(--ink);text-decoration:none;font-family:"Patrick Hand",cursive;font-size:18px;cursor:pointer;box-shadow:0 4px 0 var(--ink);transition:transform .15s}
+.pill:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.pill--red{background:var(--red);color:#fff8e1}
+.gate{position:absolute;inset:0;z-index:30;border:0;padding:0;background:var(--yellow);display:grid;place-items:center;cursor:pointer;transition:opacity .6s}
+.gate.open{opacity:0;pointer-events:none}
+.gate__in{display:grid;gap:3cqw;text-align:center;color:var(--red)}
+.gate__k{font-family:"Rozha One",serif;font-size:5cqw;letter-spacing:.14em}
+.gate__t{font-family:"Rozha One",serif;font-size:15cqw;line-height:1}
+.gate__t i{font-style:normal;font-size:.5em;vertical-align:middle}
+.gate__go{justify-self:center;margin-top:3cqw;font-family:"Patrick Hand",cursive;font-size:6cqw;color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:1.5cqw 6cqw;background:#fffbe0;box-shadow:0 4px 0 var(--ink);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
+@media (prefers-reduced-motion:reduce){.road,.gate__go{animation:none}}
+
+/* save-the-date type sits above the couple */
+.std-names{top:7%}
+.std-save{top:11.5%;font-size:17cqw}
+.std-de{top:25%;font-size:7cqw}
+.std-date{top:29%;font-size:17cqw}
+.std-when{top:43.5%;font-size:5.4cqw}
+.std-where{top:49%;font-size:4.8cqw}
